@@ -3,10 +3,11 @@
 public class Dog
 {
     //instance variables
-    private String name;
+    private final String name;
     private int age;
-    private String breed;
+    private final String breed;
     private int weight; // in pounds
+    private static int count;
 
 
     //Constructors
@@ -16,6 +17,7 @@ public class Dog
         this.age = age;
         this.breed = breed;
         this.weight = weight;
+        count++;
     }//end full constructor
 
     public Dog()
@@ -31,5 +33,52 @@ public class Dog
     public int inKg()
     {
         return (int) ( weight / 2.205);
+    }
+
+    //Static Variable
+    public static int getCount()
+    {
+        return count;
+    }
+
+    //Getters
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getBreed()
+    {
+        return breed;
+    }
+
+    public int getAge()
+    {
+        return age;
+    }
+
+    public int getWeight()
+    {
+        return weight;
+    }
+
+    //Setters
+    public void setAge(int myAge)
+    {
+        age = myAge;
+    }
+
+    public void setWeight(int myWeight)
+    {
+        weight = myWeight;
+    }
+
+    //ToString
+    public String toString()
+    {
+        return name + "'s information \n"
+                    + "Age: " + age + " years old \n"
+                    + "Breed: " + breed + "\n"
+                    + "Weight (in pounds): " + weight;
     }
 }
